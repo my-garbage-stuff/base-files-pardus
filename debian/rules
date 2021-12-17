@@ -15,7 +15,6 @@ DESTDIR = debian/base-files
 	dh $@
 
 override_dh_auto_build:
-	sh debian/check-md5sum-etc profile
 	sed -e "s&#OSNAME#&$(OSNAME)&g" debian/copyright.in > debian/copyright
 	sed -e "s/#VENDORFILE#/$(VENDORFILE)/g" debian/postinst.in > debian/postinst
 
